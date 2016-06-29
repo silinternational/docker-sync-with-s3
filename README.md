@@ -6,6 +6,9 @@ This image can be used to either sync files from a container to S3 or from S3 to
 It is intended that a single instance of this image will run a single cron job and sync process. If you have multiple 
 directories to sync, then you should run multiple containers each with the appropriate configuration for that directory. 
 
+## Docker Hub
+This image is built automatically on the Docker Hub as [silintl/sync-with-s3](https://hub.docker.com/r/silintl/sync-with-s3/)
+
 ## Running locally
 1. Clone this repo
 2. Copy ```local.env.dist``` to ```local.env``` and update values as appropriate
