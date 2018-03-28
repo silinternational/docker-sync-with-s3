@@ -33,10 +33,10 @@ with open('/etc/crontabs/root', 'w') as out_file:
     out_file.write(add_env_variables(text, env_dict))
 
 
-# read file for s3cmd config file
-with open('/root/.s3cfg', 'r') as in_file:
-    text = in_file.read()
+## read file for s3cmd config file
+#with open('/root/.s3cfg', 'r') as in_file:
+#    text = in_file.read()
 
-# write file for s3cmd config file
-with open('/root/.s3cfg', 'w') as out_file:
-    out_file.write(add_env_variables(text, env_dict))
+## write file for s3cmd config file
+#with open('/root/.s3cfg', 'w') as out_file:
+#    out_file.write(add_env_variables(text, env_dict))

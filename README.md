@@ -21,7 +21,8 @@ This image is built automatically on the Docker Hub as [silintl/sync-with-s3](ht
 4. ```SOURCE_PATH``` - Source files to be synced, example: ```/var/www/uploads```
 5. ```DESTINATION_PATH``` - Destination of where to sync files to, example: ```s3://my-bucket/site-uploads```
 6. ```BUCKET_LOCATION``` - AWS Region for bucket, ex: ```us-east-1```
+7. ```LOGENTRIES_KEY``` - (optional) If provided, the image will send command output to syslog with priority ```user.info```.
 
 ## Volumes
 You will need to define volumes in your Docker configuration for sharing filesystem between your application 
-ccontainers and this sync container.
+containers and this sync container.

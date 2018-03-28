@@ -1,0 +1,9 @@
+# The 's3 sync' command reports progress every few seconds with lines like:
+# Completed 231.4 KiB/~255.4 KiB (3.8 MiB/s) with ~2 file(s) remaining (calculating...)^M
+#
+# We don't want to send these lines to logentries.  The final line contains
+# only ASCII space characters.  The 'sed' commands strip the progress lines
+# and the final blank line from the output leaving only one line for each
+# file transfered.
+#
+CRON_SCHEDULE (aws --color=off --no-paginate s3 sync SOURCE_PATH DESTINATION_PATH 2>&1) | sed -e 's/Completed .*\r//' -e '/^  *$/d' | logger -p user.info
