@@ -1,13 +1,14 @@
 FROM alpine:3.4
 
 RUN apk update \
-    && apk add ca-certificates python py-pip \
-    && pip install s3cmd
+    && apk add ca-certificates python py-pip rsyslog rsyslog-tls ca-certificates openssl \
+    && pip install awscli
 
 COPY run.py /run.py
-COPY crontab.txt /etc/crontabs/root
+COPY crontab.txt /crontab.txt
+COPY crontab-syslog.txt /crontab-syslog.txt
+COPY rsyslog.conf /etc/rsyslog.conf
 COPY entry.sh /entry.sh
-COPY .s3cfg /root/.s3cfg
 
 RUN chmod 755 /entry.sh
 
