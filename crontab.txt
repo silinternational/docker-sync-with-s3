@@ -1,1 +1,1 @@
-CRON_SCHEDULE aws --color=off --no-paginate s3 sync SOURCE_PATH DESTINATION_PATH
+CRON_SCHEDULE aws --color=off --no-paginate s3 sync S3SYNC_ARGS SOURCE_PATH DESTINATION_PATH
