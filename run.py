@@ -5,6 +5,7 @@ bucket_location = os.environ.get('BUCKET_LOCATION')
 cron_schedule = os.environ.get('CRON_SCHEDULE')
 source_path = os.environ.get('SOURCE_PATH')
 destination_path = os.environ.get('DESTINATION_PATH')
+s3sync_args = os.environ.get('S3SYNC_ARGS')
 
 
 # create dictionary of environment variables
@@ -15,6 +16,7 @@ env_dict['BUCKET_LOCATION'] = bucket_location
 env_dict['CRON_SCHEDULE'] = cron_schedule
 env_dict['SOURCE_PATH'] = source_path
 env_dict['DESTINATION_PATH'] = destination_path
+env_dict['S3SYNC_ARGS'] = s3sync_args
 
 
 # function to add environment variables to file

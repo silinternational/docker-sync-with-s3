@@ -6,4 +6,4 @@
 # and the final blank line from the output leaving only one line for each
 # file transfered.
 #
-CRON_SCHEDULE (aws --color=off --no-paginate s3 sync SOURCE_PATH DESTINATION_PATH 2>&1) | sed -e 's/Completed .*\r//' -e '/^  *$/d' | logger -p user.info
+CRON_SCHEDULE (aws --color=off --no-paginate s3 sync S3SYNC_ARGS SOURCE_PATH DESTINATION_PATH 2>&1) | sed -e 's/Completed .*\r//' -e '/^  *$/d' | logger -p user.info
