@@ -7,6 +7,9 @@ source_path = os.environ.get('SOURCE_PATH')
 destination_path = os.environ.get('DESTINATION_PATH')
 s3sync_args = os.environ.get('S3SYNC_ARGS')
 
+if s3sync_args == None:
+    s3sync_args = ""
+
 
 # create dictionary of environment variables
 env_dict = {}
