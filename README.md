@@ -22,6 +22,7 @@ This image is built automatically on the Docker Hub as [silintl/sync-with-s3](ht
 5. ```DESTINATION_PATH``` - Destination of where to sync files to, example: ```s3://my-bucket/site-uploads```
 6. ```BUCKET_LOCATION``` - AWS Region for bucket, ex: ```us-east-1```
 7. ```LOGENTRIES_KEY``` - (optional) If provided, the image will send command output to syslog with priority ```user.info```.
+8. ```S3SYNC_ARGS``` - (optional) If provided, the arguments will be included in the ```aws s3 sync``` command. For example, setting ```S3SYNC_ARGS=--delete``` will cause files in the destination to be deleted if they no longer exist in the source.
 
 ## Volumes
 You will need to define volumes in your Docker configuration for sharing filesystem between your application 
